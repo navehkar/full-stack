@@ -11,8 +11,10 @@ const app = express();
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
-  origin:['http://localhost:5173'],
-  credentials: true ,
+  origin: ['https://oy-vay-pay-naveh1234.netlify.app', 'http://localhost:5173'],
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'Cookie'],
 }))
 app.use('/api',routes);
 
