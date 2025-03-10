@@ -74,7 +74,13 @@ const signIn = async (req, res) => {
 };
 const signOut = async (req, res) =>{
     try{
-    res.clearCookie('token');
+        res.cookie('token', '', {
+            httpOnly: true,
+            secure: true,
+            sameSite: 'none',
+            expires: new Date(0),
+            path: '/'
+        });
     return res.status(200).json({message: 'User signed out successfully'})
     }catch(error){
         console.log(error)
