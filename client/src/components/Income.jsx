@@ -163,6 +163,7 @@ export const Income = () => {
       </form>
       <Filters inputSearch={inputSearch} setInputSearch={setInputSearch} selectedFilter={selectedFilter} setSelectedFilter={setSelectedFilter} maxAmount={maxAmount}/>
       {filteredIncomes.length > 0 ? (
+        <div className='table-container'>
       <table>
         <thead>
           <tr>
@@ -196,7 +197,8 @@ export const Income = () => {
             </tr>
           )}
         </tbody>
-      </table> ) : inputSearch ? (
+      </table>
+      </div> ) : inputSearch ? (
         <div className='no-expenses-message'>
           No matching incomes found for "{inputSearch}".
         </div>

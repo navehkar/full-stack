@@ -162,6 +162,7 @@ export const Expenses = () => {
     <Filters inputSearch={inputSearch} setInputSearch={setInputSearch} selectedFilter={selectedFilter} setSelectedFilter={setSelectedFilter} maxAmount={maxAmount}/>
 
 {filteredExpenses.length > 0 ? (
+  <div className="table-container">
       <table className='expenses-table'>
         <thead>
           <tr>
@@ -196,6 +197,7 @@ export const Expenses = () => {
           )}
         </tbody>
       </table>
+      </div>
        ) : inputSearch ? (
         <div className='no-expenses-message'>
           No matching expenses found for "{inputSearch}".
