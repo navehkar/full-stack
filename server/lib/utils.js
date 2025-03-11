@@ -13,11 +13,8 @@ function setTokenCookie(res, user, secret) {
     
     res.cookie('token', token, {
         httpOnly: true,
-        secure: true, // true in production
-        sameSite: 'none',// important for cross-site
+        sameSite: 'strict',// important for cross-site
         maxAge: 24 * 60 * 60 * 1000, // 24 hours
-        path: '/',
-        domain: process.env.NODE_ENV === 'production' ? '.full-stack-z8dl.onrender.com' : 'localhost'
     });
 }
 module.exports ={

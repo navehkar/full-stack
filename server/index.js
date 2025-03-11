@@ -12,7 +12,7 @@ const app = express();
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
-  origin: ['https://full-stack-6sdv.onrender.com', 'http://localhost:5173'],
+  origin: ['http://localhost:5173', 'https://full-stack-6sdv.onrender.com'],
   credentials: true,
 }));
 app.use(express.static(path.join(__dirname, 'public')));
