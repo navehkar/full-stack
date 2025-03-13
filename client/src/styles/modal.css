@@ -10,15 +10,20 @@
     align-items: center;
     z-index: 1000;
 }
-.modal-content{
+
+.modal-content {
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
     position: relative;
-    min-width: 500px;
-
+    width: 90%;
+    max-width: 500px;
+    margin: auto;
+    overflow-y: auto;
+    max-height: 90vh;
 }
-.modal-close{
+
+.modal-close {
     position: absolute;
     top: 5px;
     right: 5px;
@@ -26,4 +31,44 @@
     border: none;
     font-size: 1rem;
     cursor: pointer;
+}
+
+/* Tablets and smaller laptops */
+@media screen and (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+        padding: 15px;
+        margin: 10px;
+    }
+}
+
+/* Mobile phones */
+@media screen and (max-width: 480px) {
+    .modal-content {
+        width: 95%;
+        padding: 12px;
+        margin: 8px;
+        border-radius: 6px;
+    }
+
+    .modal-close {
+        top: 8px;
+        right: 8px;
+    }
+}
+
+/* Small mobile phones */
+@media screen and (max-width: 320px) {
+    .modal-content {
+        width: 98%;
+        padding: 10px;
+        margin: 5px;
+    }
+}
+
+/* Handle landscape orientation */
+@media screen and (max-height: 600px) {
+    .modal-content {
+        max-height: 85vh;
+    }
 }
